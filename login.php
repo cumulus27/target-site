@@ -1,4 +1,4 @@
-]'<?php
+<?php
 
 define( 'DVWA_WEB_PAGE_TO_ROOT', '' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
@@ -75,7 +75,7 @@ echo "
 
 	<br />
 
-	<p><img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/login_logo.png\" /></p>
+<!--	<p><img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/login_logo.png\" /></p> -->
 
 	<br />
 
@@ -120,7 +120,7 @@ echo "
 
 	<div id=\"footer\">
 
-	<p>" . dvwaExternalLinkUrlGet( 'http://www.dvwa.co.uk/', 'Damn Vulnerable Web Application (DVWA)' ) . "</p>
+	<p>Web安全漏洞靶场</p>
 
 	</div> <!--<div id=\"footer\"> -->
 
