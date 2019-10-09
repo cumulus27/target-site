@@ -121,8 +121,8 @@ function dvwaCurrentUser() {
 
 function &dvwaPageNewGrab() {
 	$returnArray = array(
-		'title'           => 'Damn Vulnerable Web Application (DVWA) v' . dvwaVersionGet() . '',
-		'title_separator' => ' :: ',
+		'title'           => 'Web安全漏洞靶场' . dvwaVersionGet() . '',
+		'title_separator' => ':',
 		'body'            => '',
 		'page_id'         => '',
 		'help_button'     => '',
