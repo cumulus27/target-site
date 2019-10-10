@@ -6,7 +6,7 @@ require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
-$page[ 'title' ]   = 'DVWA Security' . $page[ 'title_separator' ].$page[ 'title' ];
+$page[ 'title' ]   = 'Security Level' . $page[ 'title_separator' ].$page[ 'title' ];
 $page[ 'page_id' ] = 'security';
 
 $securityHtml = '';
@@ -83,7 +83,7 @@ generateSessionToken();
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>DVWA Security <img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/lock.png\" /></h1>
+	<h1>Security Setup <img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/lock.png\" /></h1>
 	<br />
 
 	<h2>Security Level</h2>
