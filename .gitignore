@@ -1,2 +1,5 @@
 # idea
 .idea/
+
+# config file
+config/config.inc.php
