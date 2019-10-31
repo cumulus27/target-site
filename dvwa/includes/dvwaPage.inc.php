@@ -210,10 +210,13 @@ function dvwaHtmlEcho( $pPage ) {
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'XSS (存储)', 'url' => 'vulnerabilities/xss_s/' );
 //		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'csp', 'name' => 'CSP Bypass', 'url' => 'vulnerabilities/csp/' );
 //		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'javascript', 'name' => 'JavaScript', 'url' => 'vulnerabilities/javascript/' );
+
 	}
 
 	$menuBlocks[ 'meta' ] = array();
 	if( dvwaIsLoggedIn() ) {
+        $menuBlocks[ 'meta' ][] = array( 'id' => 'upload_list', 'name' => '文件上传集合', 'url' => 'upload/index.php' );
+        $menuBlocks[ 'meta' ][] = array( 'id' => 'sql_list', 'name' => 'SQL注入集合', 'url' => 'vulnerabilities/sqli/' );
 		$menuBlocks[ 'meta' ][] = array( 'id' => 'security', 'name' => '安全等级', 'url' => 'security.php' );
 		$menuBlocks[ 'meta' ][] = array( 'id' => 'phpinfo', 'name' => 'PHP信息', 'url' => 'phpinfo.php' );
 	}

@@ -7,13 +7,13 @@ if( !defined( 'DVWA_WEB_PAGE_TO_ROOT' ) ) {
 
 session_start(); // Creates a 'Full Path Disclosure' vuln.
 
-if (!file_exists(DVWA_WEB_PAGE_TO_ROOT . 'config/config.inc.php')) {
+if (!file_exists(DVWA_WEB_PAGE_TO_ROOT . '../config/config.inc.php')) {
 	die ("DVWA System error - config file not found. Copy config/config.inc.php.dist to config/config.inc.php and configure to your environment.");
 }
 
 // Include configs
-require_once DVWA_WEB_PAGE_TO_ROOT . 'config/config.inc.php';
-require_once( 'dvwaPhpIds.inc.php' );
+require_once DVWA_WEB_PAGE_TO_ROOT . '../config/config.inc.php';
+//require_once( 'dvwaPhpIds.inc.php' );
 
 // Declare the $html variable
 if( !isset( $html ) ) {
@@ -550,7 +550,7 @@ function tokenField() {  # Return a field for the (CSRF) token
 
 // Setup Functions --
 $PHPUploadPath    = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "hackable" . DIRECTORY_SEPARATOR . "uploads" ) . DIRECTORY_SEPARATOR;
-$PHPIDSPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "external" . DIRECTORY_SEPARATOR . "phpids" . DIRECTORY_SEPARATOR . dvwaPhpIdsVersionGet() . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "IDS" . DIRECTORY_SEPARATOR . "tmp" . DIRECTORY_SEPARATOR . "phpids_log.txt" );
+//$PHPIDSPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "external" . DIRECTORY_SEPARATOR . "phpids" . DIRECTORY_SEPARATOR . dvwaPhpIdsVersionGet() . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "IDS" . DIRECTORY_SEPARATOR . "tmp" . DIRECTORY_SEPARATOR . "phpids_log.txt" );
 $PHPCONFIGPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "config");
 
 
