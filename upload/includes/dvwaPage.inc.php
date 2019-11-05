@@ -199,15 +199,15 @@ function dvwaHtmlEcho( $pPage ) {
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'brute', 'name' => '文件上传1', 'url' => 'vulnerabilities/brute/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'exec', 'name' => '文件上传2', 'url' => 'vulnerabilities/exec/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'csrf', 'name' => '文件上传3', 'url' => 'vulnerabilities/csrf/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'fi', 'name' => '文件包含', 'url' => 'vulnerabilities/fi/.?page=include.php' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => '文件上传', 'url' => 'vulnerabilities/upload/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'fi', 'name' => '文件上传4', 'url' => 'vulnerabilities/fi/.?page=include.php' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => '文件上传5', 'url' => 'vulnerabilities/upload/' );
 //		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'captcha', 'name' => 'Insecure CAPTCHA', 'url' => 'vulnerabilities/captcha/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli', 'name' => 'SQL注入', 'url' => 'vulnerabilities/sqli/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli_blind', 'name' => 'SQL注入(盲注)', 'url' => 'vulnerabilities/sqli_blind/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli', 'name' => '文件上传6', 'url' => 'vulnerabilities/sqli/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli_blind', 'name' => '文件上传7', 'url' => 'vulnerabilities/sqli_blind/' );
 //		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'weak_id', 'name' => 'Weak Session IDs', 'url' => 'vulnerabilities/weak_id/' );
 //		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_d', 'name' => 'XSS (DOM)', 'url' => 'vulnerabilities/xss_d/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => 'XSS (反射)', 'url' => 'vulnerabilities/xss_r/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'XSS (存储)', 'url' => 'vulnerabilities/xss_s/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => '文件上传8', 'url' => 'vulnerabilities/xss_r/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => '文件上传9', 'url' => 'vulnerabilities/xss_s/' );
 //		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'csp', 'name' => 'CSP Bypass', 'url' => 'vulnerabilities/csp/' );
 //		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'javascript', 'name' => 'JavaScript', 'url' => 'vulnerabilities/javascript/' );
 	}
@@ -221,6 +221,7 @@ function dvwaHtmlEcho( $pPage ) {
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'logout' ] = array();
+		$menuBlocks[ 'logout' ][] = array( 'id' => 'back', 'name' => '返回', 'url' => '../index.php' );
 		$menuBlocks[ 'logout' ][] = array( 'id' => 'logout', 'name' => '注销', 'url' => 'logout.php' );
 	}
 
@@ -287,11 +288,11 @@ function dvwaHtmlEcho( $pPage ) {
 
 		<title>{$pPage[ 'title' ]}</title>
 
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/main.css\" />
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/css/main.css\" />
 
-		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "favicon.ico\" />
+		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../favicon.ico\" />
 
-		<script type=\"text/javascript\" src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/js/dvwaPage.js\"></script>
+		<script type=\"text/javascript\" src=\"" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/js/dvwaPage.js\"></script>
 
 	</head>
 
