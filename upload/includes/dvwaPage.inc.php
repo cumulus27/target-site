@@ -196,20 +196,20 @@ function dvwaHtmlEcho( $pPage ) {
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'vulnerabilities' ] = array();
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'brute', 'name' => '文件上传1', 'url' => 'vulnerabilities/brute/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'exec', 'name' => '文件上传2', 'url' => 'vulnerabilities/exec/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'csrf', 'name' => '文件上传3', 'url' => 'vulnerabilities/csrf/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'fi', 'name' => '文件上传4', 'url' => 'vulnerabilities/fi/.?page=include.php' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => '文件上传5', 'url' => 'vulnerabilities/upload/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'captcha', 'name' => 'Insecure CAPTCHA', 'url' => 'vulnerabilities/captcha/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli', 'name' => '文件上传6', 'url' => 'vulnerabilities/sqli/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli_blind', 'name' => '文件上传7', 'url' => 'vulnerabilities/sqli_blind/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'weak_id', 'name' => 'Weak Session IDs', 'url' => 'vulnerabilities/weak_id/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_d', 'name' => 'XSS (DOM)', 'url' => 'vulnerabilities/xss_d/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => '文件上传8', 'url' => 'vulnerabilities/xss_r/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => '文件上传9', 'url' => 'vulnerabilities/xss_s/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'csp', 'name' => 'CSP Bypass', 'url' => 'vulnerabilities/csp/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'javascript', 'name' => 'JavaScript', 'url' => 'vulnerabilities/javascript/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_01', 'name' => '文件上传01', 'url' => 'task_page.php?task=01' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_02', 'name' => '文件上传02', 'url' => 'task_page.php?task=02' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_03', 'name' => '文件上传03', 'url' => 'task_page.php?task=03' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_04', 'name' => '文件上传04', 'url' => 'task_page.php?task=04' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_05', 'name' => '文件上传05', 'url' => 'task_page.php?task=05' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_06', 'name' => '文件上传06', 'url' => 'task_page.php?task=06' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_07', 'name' => '文件上传07', 'url' => 'task_page.php?task=07' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_08', 'name' => '文件上传08', 'url' => 'task_page.php?task=08' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_09', 'name' => '文件上传09', 'url' => 'task_page.php?task=09' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_10', 'name' => '文件上传10', 'url' => 'task_page.php?task=10' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_11', 'name' => '文件上传11', 'url' => 'task_page.php?task=11' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_12', 'name' => '文件上传12', 'url' => 'task_page.php?task=12' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_13', 'name' => '文件上传13', 'url' => 'task_page.php?task=13' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_14', 'name' => '文件上传14', 'url' => 'task_page.php?task=14' );
 	}
 
 	$menuBlocks[ 'meta' ] = array();
