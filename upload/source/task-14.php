@@ -1,4 +1,5 @@
 <?php
+include 'config.php';
 
 function getReailFileType($filename){
     $file = fopen($filename, "rb");

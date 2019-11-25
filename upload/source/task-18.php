@@ -1,5 +1,5 @@
 <?php
-
+include 'config.php';
 
 $is_upload = false;
 $msg = null;

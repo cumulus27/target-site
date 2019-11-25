@@ -1,4 +1,5 @@
 <?php
+include 'config.php';
 
 function isImage($filename){
     //需要开启php_exif模块

@@ -1,4 +1,5 @@
 <?php
+include 'config.php';
 
 function isImage($filename){
     $types = '.jpeg|.png|.gif';
