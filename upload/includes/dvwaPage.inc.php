@@ -7,13 +7,13 @@ if( !defined( 'DVWA_WEB_PAGE_TO_ROOT' ) ) {
 
 session_start(); // Creates a 'Full Path Disclosure' vuln.
 
-if (!file_exists(DVWA_WEB_PAGE_TO_ROOT . 'config/config.inc.php')) {
+if (!file_exists(DVWA_WEB_PAGE_TO_ROOT . '../config/config.inc.php')) {
 	die ("DVWA System error - config file not found. Copy config/config.inc.php.dist to config/config.inc.php and configure to your environment.");
 }
 
 // Include configs
-require_once DVWA_WEB_PAGE_TO_ROOT . 'config/config.inc.php';
-require_once( 'dvwaPhpIds.inc.php' );
+require_once DVWA_WEB_PAGE_TO_ROOT . '../config/config.inc.php';
+//require_once( 'dvwaPhpIds.inc.php' );
 
 // Declare the $html variable
 if( !isset( $html ) ) {
@@ -61,7 +61,7 @@ function &dvwaSessionGrab() {
 function dvwaPageStartup( $pActions ) {
 	if( in_array( 'authenticated', $pActions ) ) {
 		if( !dvwaIsLoggedIn()) {
-			dvwaRedirect( DVWA_WEB_PAGE_TO_ROOT . 'login.php' );
+			dvwaRedirect( DVWA_WEB_PAGE_TO_ROOT . '../login.php' );
 		}
 	}
 
@@ -196,27 +196,31 @@ function dvwaHtmlEcho( $pPage ) {
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'vulnerabilities' ] = array();
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'brute', 'name' => '暴力破解', 'url' => 'vulnerabilities/brute/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'exec', 'name' => '命令执行', 'url' => 'vulnerabilities/exec/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'csrf', 'name' => 'CSRF', 'url' => 'vulnerabilities/csrf/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'fi', 'name' => '文件包含', 'url' => 'vulnerabilities/fi/.?page=include.php' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => '文件上传', 'url' => 'vulnerabilities/upload/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'captcha', 'name' => 'Insecure CAPTCHA', 'url' => 'vulnerabilities/captcha/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli', 'name' => 'SQL注入', 'url' => 'vulnerabilities/sqli/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli_blind', 'name' => 'SQL注入(盲注)', 'url' => 'vulnerabilities/sqli_blind/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'weak_id', 'name' => 'Weak Session IDs', 'url' => 'vulnerabilities/weak_id/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_d', 'name' => 'XSS (DOM)', 'url' => 'vulnerabilities/xss_d/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => 'XSS (反射)', 'url' => 'vulnerabilities/xss_r/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'XSS (存储)', 'url' => 'vulnerabilities/xss_s/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'csp', 'name' => 'CSP Bypass', 'url' => 'vulnerabilities/csp/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'javascript', 'name' => 'JavaScript', 'url' => 'vulnerabilities/javascript/' );
-
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_01', 'name' => '文件上传01', 'url' => 'task_page.php?task=01' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_02', 'name' => '文件上传02', 'url' => 'task_page.php?task=02' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_03', 'name' => '文件上传03', 'url' => 'task_page.php?task=03' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_04', 'name' => '文件上传04', 'url' => 'task_page.php?task=04' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_05', 'name' => '文件上传05', 'url' => 'task_page.php?task=05' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_06', 'name' => '文件上传06', 'url' => 'task_page.php?task=06' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_07', 'name' => '文件上传07', 'url' => 'task_page.php?task=07' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_08', 'name' => '文件上传08', 'url' => 'task_page.php?task=08' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_09', 'name' => '文件上传09', 'url' => 'task_page.php?task=09' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_10', 'name' => '文件上传10', 'url' => 'task_page.php?task=10' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_11', 'name' => '文件上传11', 'url' => 'task_page.php?task=11' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_12', 'name' => '文件上传12', 'url' => 'task_page.php?task=12' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_13', 'name' => '文件上传13', 'url' => 'task_page.php?task=13' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_14', 'name' => '文件上传14', 'url' => 'task_page.php?task=14' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_15', 'name' => '文件上传15', 'url' => 'task_page.php?task=15' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_16', 'name' => '文件上传16', 'url' => 'task_page.php?task=16' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_17', 'name' => '文件上传17', 'url' => 'task_page.php?task=17' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_18', 'name' => '文件上传18', 'url' => 'task_page.php?task=18' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_19', 'name' => '文件上传19', 'url' => 'task_page.php?task=19' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_20', 'name' => '文件上传20', 'url' => 'task_page.php?task=20' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_21', 'name' => '文件上传21', 'url' => 'task_page.php?task=21' );
 	}
 
 	$menuBlocks[ 'meta' ] = array();
 	if( dvwaIsLoggedIn() ) {
-        $menuBlocks[ 'meta' ][] = array( 'id' => 'upload_list', 'name' => '文件上传集合', 'url' => 'upload/index.php' );
-        $menuBlocks[ 'meta' ][] = array( 'id' => 'sql_list', 'name' => 'SQL注入集合', 'url' => 'sql/index.php' );
 		$menuBlocks[ 'meta' ][] = array( 'id' => 'security', 'name' => '安全等级', 'url' => 'security.php' );
 		$menuBlocks[ 'meta' ][] = array( 'id' => 'phpinfo', 'name' => 'PHP信息', 'url' => 'phpinfo.php' );
 	}
@@ -224,6 +228,7 @@ function dvwaHtmlEcho( $pPage ) {
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'logout' ] = array();
+		$menuBlocks[ 'logout' ][] = array( 'id' => 'back', 'name' => '返回', 'url' => '../index.php' );
 		$menuBlocks[ 'logout' ][] = array( 'id' => 'logout', 'name' => '注销', 'url' => 'logout.php' );
 	}
 
@@ -290,11 +295,11 @@ function dvwaHtmlEcho( $pPage ) {
 
 		<title>{$pPage[ 'title' ]}</title>
 
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/main.css\" />
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/css/main.css\" />
 
-		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "favicon.ico\" />
+		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../favicon.ico\" />
 
-		<script type=\"text/javascript\" src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/js/dvwaPage.js\"></script>
+		<script type=\"text/javascript\" src=\"" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/js/dvwaPage.js\"></script>
 
 	</head>
 
@@ -333,7 +338,7 @@ function dvwaHtmlEcho( $pPage ) {
 			<div id=\"footer\">
 
 				<p>Web安全漏洞靶场</p>
-				<script src='" . DVWA_WEB_PAGE_TO_ROOT . "/dvwa/js/add_event_listeners.js'></script>
+				<script src='" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/js/add_event_listeners.js'></script>
 
 			</div>
 
@@ -362,9 +367,9 @@ function dvwaHelpHtmlEcho( $pPage ) {
 
 		<title>{$pPage[ 'title' ]}</title>
 
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/help.css\" />
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/css/help.css\" />
 
-		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "favicon.ico\" />
+		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../favicon.ico\" />
 
 	</head>
 
@@ -399,9 +404,9 @@ function dvwaSourceHtmlEcho( $pPage ) {
 
 		<title>{$pPage[ 'title' ]}</title>
 
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/source.css\" />
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/css/source.css\" />
 
-		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "favicon.ico\" />
+		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../favicon.ico\" />
 
 	</head>
 
@@ -431,13 +436,13 @@ function dvwaExternalLinkUrlGet( $pLink,$text=null ) {
 
 function dvwaButtonHelpHtmlGet( $pId ) {
 	$security = dvwaSecurityLevelGet();
-	return "<input type=\"button\" value=\"查看帮助\" class=\"popup_button\" id='help_button' data-help-url='" . DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/view_help.php?id={$pId}&security={$security}' )\">";
+	return "<input type=\"button\" value=\"查看帮助\" class=\"popup_button\" id='help_button' data-help-url='" . DVWA_WEB_PAGE_TO_ROOT . "../vulnerabilities/view_help.php?id={$pId}&security={$security}' )\">";
 }
 
 
 function dvwaButtonSourceHtmlGet( $pId ) {
 	$security = dvwaSecurityLevelGet();
-	return "<input type=\"button\" value=\"查看源码\" class=\"popup_button\" id='source_button' data-source-url='" . DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/view_source.php?id={$pId}&security={$security}' )\">";
+	return "<input type=\"button\" value=\"查看源码\" class=\"popup_button\" id='source_button' data-source-url='" . DVWA_WEB_PAGE_TO_ROOT . "../vulnerabilities/view_source.php?id={$pId}&security={$security}' )\">";
 }
 
 
@@ -553,7 +558,7 @@ function tokenField() {  # Return a field for the (CSRF) token
 
 // Setup Functions --
 $PHPUploadPath    = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "hackable" . DIRECTORY_SEPARATOR . "uploads" ) . DIRECTORY_SEPARATOR;
-$PHPIDSPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "external" . DIRECTORY_SEPARATOR . "phpids" . DIRECTORY_SEPARATOR . dvwaPhpIdsVersionGet() . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "IDS" . DIRECTORY_SEPARATOR . "tmp" . DIRECTORY_SEPARATOR . "phpids_log.txt" );
+//$PHPIDSPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "external" . DIRECTORY_SEPARATOR . "phpids" . DIRECTORY_SEPARATOR . dvwaPhpIdsVersionGet() . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "IDS" . DIRECTORY_SEPARATOR . "tmp" . DIRECTORY_SEPARATOR . "phpids_log.txt" );
 $PHPCONFIGPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "config");
 
 
