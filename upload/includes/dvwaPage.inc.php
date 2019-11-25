@@ -61,7 +61,7 @@ function &dvwaSessionGrab() {
 function dvwaPageStartup( $pActions ) {
 	if( in_array( 'authenticated', $pActions ) ) {
 		if( !dvwaIsLoggedIn()) {
-			dvwaRedirect( DVWA_WEB_PAGE_TO_ROOT . 'login.php' );
+			dvwaRedirect( DVWA_WEB_PAGE_TO_ROOT . '../login.php' );
 		}
 	}
 
@@ -210,6 +210,13 @@ function dvwaHtmlEcho( $pPage ) {
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_12', 'name' => '文件上传12', 'url' => 'task_page.php?task=12' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_13', 'name' => '文件上传13', 'url' => 'task_page.php?task=13' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_14', 'name' => '文件上传14', 'url' => 'task_page.php?task=14' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_15', 'name' => '文件上传15', 'url' => 'task_page.php?task=15' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_16', 'name' => '文件上传16', 'url' => 'task_page.php?task=16' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_17', 'name' => '文件上传17', 'url' => 'task_page.php?task=17' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_18', 'name' => '文件上传18', 'url' => 'task_page.php?task=18' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_19', 'name' => '文件上传19', 'url' => 'task_page.php?task=19' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_20', 'name' => '文件上传20', 'url' => 'task_page.php?task=20' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'task_21', 'name' => '文件上传21', 'url' => 'task_page.php?task=21' );
 	}
 
 	$menuBlocks[ 'meta' ] = array();
@@ -331,7 +338,7 @@ function dvwaHtmlEcho( $pPage ) {
 			<div id=\"footer\">
 
 				<p>Web安全漏洞靶场</p>
-				<script src='" . DVWA_WEB_PAGE_TO_ROOT . "/dvwa/js/add_event_listeners.js'></script>
+				<script src='" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/js/add_event_listeners.js'></script>
 
 			</div>
 
@@ -360,9 +367,9 @@ function dvwaHelpHtmlEcho( $pPage ) {
 
 		<title>{$pPage[ 'title' ]}</title>
 
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/help.css\" />
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/css/help.css\" />
 
-		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "favicon.ico\" />
+		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../favicon.ico\" />
 
 	</head>
 
@@ -397,9 +404,9 @@ function dvwaSourceHtmlEcho( $pPage ) {
 
 		<title>{$pPage[ 'title' ]}</title>
 
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/source.css\" />
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/css/source.css\" />
 
-		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "favicon.ico\" />
+		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../favicon.ico\" />
 
 	</head>
 
@@ -429,13 +436,13 @@ function dvwaExternalLinkUrlGet( $pLink,$text=null ) {
 
 function dvwaButtonHelpHtmlGet( $pId ) {
 	$security = dvwaSecurityLevelGet();
-	return "<input type=\"button\" value=\"查看帮助\" class=\"popup_button\" id='help_button' data-help-url='" . DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/view_help.php?id={$pId}&security={$security}' )\">";
+	return "<input type=\"button\" value=\"查看帮助\" class=\"popup_button\" id='help_button' data-help-url='" . DVWA_WEB_PAGE_TO_ROOT . "../vulnerabilities/view_help.php?id={$pId}&security={$security}' )\">";
 }
 
 
 function dvwaButtonSourceHtmlGet( $pId ) {
 	$security = dvwaSecurityLevelGet();
-	return "<input type=\"button\" value=\"查看源码\" class=\"popup_button\" id='source_button' data-source-url='" . DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/view_source.php?id={$pId}&security={$security}' )\">";
+	return "<input type=\"button\" value=\"查看源码\" class=\"popup_button\" id='source_button' data-source-url='" . DVWA_WEB_PAGE_TO_ROOT . "../vulnerabilities/view_source.php?id={$pId}&security={$security}' )\">";
 }
 
 

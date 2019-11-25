@@ -12,9 +12,9 @@ dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ]   = 'Vulnerability: File Upload' . $page[ 'title_separator' ].$page[ 'title' ];
-$page[ 'page_id' ] = 'upload';
-$page[ 'help_button' ]   = 'upload';
-$page[ 'source_button' ] = 'upload';
+$page[ 'page_id' ] = "task_{$task}";
+$page[ 'help_button' ]   = "task_{$task}";
+$page[ 'source_button' ] = "task_{$task}";
 
 dvwaDatabaseConnect();
 
@@ -30,7 +30,14 @@ if( ( !extension_loaded( 'gd' ) || !function_exists( 'gd_info' ) ) ) {
     $WarningHtml .= "<div class=\"warning\">The PHP module <em>GD is not installed</em>.</div>";
 }
 
-$page[ 'body' ] .= file_get_contents("source/task-{$task}.php");
+ob_start();
+require("source/task-{$task}.php");
+$content = ob_get_contents();
+ob_end_clean();
+
+$page[ 'body' ] .= $content;
+//$page[ 'body' ] .= eval(file_get_contents("source/task-{$task}.php"));
+//$page[ 'body' ] .= file("source/task-{$task}.php");
 
 $page[ 'body' ] .= "
 <div>

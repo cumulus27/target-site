@@ -7,13 +7,13 @@ if( !defined( 'DVWA_WEB_PAGE_TO_ROOT' ) ) {
 
 session_start(); // Creates a 'Full Path Disclosure' vuln.
 
-if (!file_exists(DVWA_WEB_PAGE_TO_ROOT . 'config/config.inc.php')) {
+if (!file_exists(DVWA_WEB_PAGE_TO_ROOT . '../config/config.inc.php')) {
 	die ("DVWA System error - config file not found. Copy config/config.inc.php.dist to config/config.inc.php and configure to your environment.");
 }
 
 // Include configs
-require_once DVWA_WEB_PAGE_TO_ROOT . 'config/config.inc.php';
-require_once( 'dvwaPhpIds.inc.php' );
+require_once DVWA_WEB_PAGE_TO_ROOT . '../config/config.inc.php';
+//require_once( 'dvwaPhpIds.inc.php' );
 
 // Declare the $html variable
 if( !isset( $html ) ) {
@@ -61,7 +61,7 @@ function &dvwaSessionGrab() {
 function dvwaPageStartup( $pActions ) {
 	if( in_array( 'authenticated', $pActions ) ) {
 		if( !dvwaIsLoggedIn()) {
-			dvwaRedirect( DVWA_WEB_PAGE_TO_ROOT . 'login.php' );
+			dvwaRedirect( DVWA_WEB_PAGE_TO_ROOT . '../login.php' );
 		}
 	}
 
@@ -187,7 +187,7 @@ function dvwaHtmlEcho( $pPage ) {
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'home' ][] = array( 'id' => 'home', 'name' => '主页', 'url' => '.' );
 //		$menuBlocks[ 'home' ][] = array( 'id' => 'instructions', 'name' => 'Instructions', 'url' => 'instructions.php' );
-		$menuBlocks[ 'home' ][] = array( 'id' => 'setup', 'name' => '设置/重置数据库', 'url' => 'setup.php' );
+		$menuBlocks[ 'home' ][] = array( 'id' => 'setup', 'name' => '设置/重置数据库', 'url' => 'source/sql-connections/setup-db.php' );
 	}
 	else {
 		$menuBlocks[ 'home' ][] = array( 'id' => 'setup', 'name' => '设置', 'url' => 'setup.php' );
@@ -196,24 +196,76 @@ function dvwaHtmlEcho( $pPage ) {
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'vulnerabilities' ] = array();
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'brute', 'name' => 'SQL注入1', 'url' => 'vulnerabilities/brute/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'exec', 'name' => 'SQL注入2', 'url' => 'vulnerabilities/exec/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'csrf', 'name' => 'SQL注入3', 'url' => 'vulnerabilities/csrf/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'fi', 'name' => '文件包含', 'url' => 'vulnerabilities/fi/.?page=include.php' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => '文件上传', 'url' => 'vulnerabilities/upload/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'captcha', 'name' => 'Insecure CAPTCHA', 'url' => 'vulnerabilities/captcha/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli', 'name' => 'SQL注入', 'url' => 'vulnerabilities/sqli/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli_blind', 'name' => 'SQL注入(盲注)', 'url' => 'vulnerabilities/sqli_blind/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'weak_id', 'name' => 'Weak Session IDs', 'url' => 'vulnerabilities/weak_id/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_d', 'name' => 'XSS (DOM)', 'url' => 'vulnerabilities/xss_d/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => 'XSS (反射)', 'url' => 'vulnerabilities/xss_r/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'XSS (存储)', 'url' => 'vulnerabilities/xss_s/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'csp', 'name' => 'CSP Bypass', 'url' => 'vulnerabilities/csp/' );
-//		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'javascript', 'name' => 'JavaScript', 'url' => 'vulnerabilities/javascript/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql01', 'name' => 'SQL注入01', 'url' => 'source/Less-1/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql02', 'name' => 'SQL注入02', 'url' => 'source/Less-2/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql03', 'name' => 'SQL注入03', 'url' => 'source/Less-3/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql04', 'name' => 'SQL注入04', 'url' => 'source/Less-4/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql05', 'name' => 'SQL注入05', 'url' => 'source/Less-5/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql06', 'name' => 'SQL注入06', 'url' => 'source/Less-6/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql07', 'name' => 'SQL注入07', 'url' => 'source/Less-7/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql08', 'name' => 'SQL注入08', 'url' => 'source/Less-8/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql09', 'name' => 'SQL注入09', 'url' => 'source/Less-9/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql10', 'name' => 'SQL注入10', 'url' => 'source/Less-10/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql11', 'name' => 'SQL注入11', 'url' => 'source/Less-11/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql12', 'name' => 'SQL注入12', 'url' => 'source/Less-12/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql13', 'name' => 'SQL注入13', 'url' => 'source/Less-13/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql14', 'name' => 'SQL注入14', 'url' => 'source/Less-14/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql15', 'name' => 'SQL注入15', 'url' => 'source/Less-15/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql16', 'name' => 'SQL注入16', 'url' => 'source/Less-16/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql17', 'name' => 'SQL注入17', 'url' => 'source/Less-17/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql18', 'name' => 'SQL注入18', 'url' => 'source/Less-18/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql19', 'name' => 'SQL注入19', 'url' => 'source/Less-19/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql20', 'name' => 'SQL注入20', 'url' => 'source/Less-20/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql21', 'name' => 'SQL注入21', 'url' => 'source/Less-21/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql22', 'name' => 'SQL注入22', 'url' => 'source/Less-22/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql23', 'name' => 'SQL注入23', 'url' => 'source/Less-23/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql24', 'name' => 'SQL注入24', 'url' => 'source/Less-24/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql25', 'name' => 'SQL注入25', 'url' => 'source/Less-25/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql26', 'name' => 'SQL注入26', 'url' => 'source/Less-26/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql27', 'name' => 'SQL注入27', 'url' => 'source/Less-27/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql28', 'name' => 'SQL注入28', 'url' => 'source/Less-28/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql29', 'name' => 'SQL注入29', 'url' => 'source/Less-29/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql30', 'name' => 'SQL注入30', 'url' => 'source/Less-30/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql31', 'name' => 'SQL注入31', 'url' => 'source/Less-31/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql32', 'name' => 'SQL注入32', 'url' => 'source/Less-32/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql33', 'name' => 'SQL注入33', 'url' => 'source/Less-33/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql34', 'name' => 'SQL注入34', 'url' => 'source/Less-34/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql35', 'name' => 'SQL注入35', 'url' => 'source/Less-35/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql36', 'name' => 'SQL注入36', 'url' => 'source/Less-36/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql37', 'name' => 'SQL注入37', 'url' => 'source/Less-37/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql38', 'name' => 'SQL注入38', 'url' => 'source/Less-38/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql39', 'name' => 'SQL注入39', 'url' => 'source/Less-39/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql40', 'name' => 'SQL注入40', 'url' => 'source/Less-40/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql41', 'name' => 'SQL注入41', 'url' => 'source/Less-41/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql42', 'name' => 'SQL注入42', 'url' => 'source/Less-42/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql43', 'name' => 'SQL注入43', 'url' => 'source/Less-43/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql44', 'name' => 'SQL注入44', 'url' => 'source/Less-44/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql45', 'name' => 'SQL注入45', 'url' => 'source/Less-45/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql46', 'name' => 'SQL注入46', 'url' => 'source/Less-46/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql47', 'name' => 'SQL注入47', 'url' => 'source/Less-47/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql48', 'name' => 'SQL注入48', 'url' => 'source/Less-48/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql49', 'name' => 'SQL注入49', 'url' => 'source/Less-49/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql50', 'name' => 'SQL注入50', 'url' => 'source/Less-50/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql51', 'name' => 'SQL注入51', 'url' => 'source/Less-51/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql52', 'name' => 'SQL注入52', 'url' => 'source/Less-52/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql53', 'name' => 'SQL注入53', 'url' => 'source/Less-53/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql54', 'name' => 'SQL注入54', 'url' => 'source/Less-54/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql55', 'name' => 'SQL注入55', 'url' => 'source/Less-55/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql56', 'name' => 'SQL注入56', 'url' => 'source/Less-56/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql57', 'name' => 'SQL注入57', 'url' => 'source/Less-57/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql58', 'name' => 'SQL注入58', 'url' => 'source/Less-58/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql59', 'name' => 'SQL注入59', 'url' => 'source/Less-59/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql60', 'name' => 'SQL注入60', 'url' => 'source/Less-60/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql61', 'name' => 'SQL注入61', 'url' => 'source/Less-61/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql62', 'name' => 'SQL注入62', 'url' => 'source/Less-62/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql63', 'name' => 'SQL注入63', 'url' => 'source/Less-63/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql64', 'name' => 'SQL注入64', 'url' => 'source/Less-64/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql65', 'name' => 'SQL注入65', 'url' => 'source/Less-65/' );
 	}
 
 	$menuBlocks[ 'meta' ] = array();
 	if( dvwaIsLoggedIn() ) {
+//		$menuBlocks[ 'meta' ][] = array( 'id' => 'database', 'name' => '数据库设置', 'url' => 'source/sql-connections/setup-db.php' );
 		$menuBlocks[ 'meta' ][] = array( 'id' => 'security', 'name' => '安全等级', 'url' => 'security.php' );
 		$menuBlocks[ 'meta' ][] = array( 'id' => 'phpinfo', 'name' => 'PHP信息', 'url' => 'phpinfo.php' );
 	}
@@ -221,6 +273,7 @@ function dvwaHtmlEcho( $pPage ) {
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'logout' ] = array();
+		$menuBlocks[ 'logout' ][] = array( 'id' => 'back', 'name' => '返回', 'url' => '../index.php' );
 		$menuBlocks[ 'logout' ][] = array( 'id' => 'logout', 'name' => '注销', 'url' => 'logout.php' );
 	}
 
@@ -287,11 +340,11 @@ function dvwaHtmlEcho( $pPage ) {
 
 		<title>{$pPage[ 'title' ]}</title>
 
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/main.css\" />
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/css/main.css\" />
 
-		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "favicon.ico\" />
+		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../favicon.ico\" />
 
-		<script type=\"text/javascript\" src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/js/dvwaPage.js\"></script>
+		<script type=\"text/javascript\" src=\"" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/js/dvwaPage.js\"></script>
 
 	</head>
 
@@ -330,7 +383,7 @@ function dvwaHtmlEcho( $pPage ) {
 			<div id=\"footer\">
 
 				<p>Web安全漏洞靶场</p>
-				<script src='" . DVWA_WEB_PAGE_TO_ROOT . "/dvwa/js/add_event_listeners.js'></script>
+				<script src='" . DVWA_WEB_PAGE_TO_ROOT . "..//dvwa/js/add_event_listeners.js'></script>
 
 			</div>
 
@@ -359,9 +412,9 @@ function dvwaHelpHtmlEcho( $pPage ) {
 
 		<title>{$pPage[ 'title' ]}</title>
 
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/help.css\" />
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/css/help.css\" />
 
-		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "favicon.ico\" />
+		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../favicon.ico\" />
 
 	</head>
 
@@ -396,9 +449,9 @@ function dvwaSourceHtmlEcho( $pPage ) {
 
 		<title>{$pPage[ 'title' ]}</title>
 
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/source.css\" />
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../dvwa/css/source.css\" />
 
-		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "favicon.ico\" />
+		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "../favicon.ico\" />
 
 	</head>
 
@@ -428,13 +481,13 @@ function dvwaExternalLinkUrlGet( $pLink,$text=null ) {
 
 function dvwaButtonHelpHtmlGet( $pId ) {
 	$security = dvwaSecurityLevelGet();
-	return "<input type=\"button\" value=\"查看帮助\" class=\"popup_button\" id='help_button' data-help-url='" . DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/view_help.php?id={$pId}&security={$security}' )\">";
+	return "<input type=\"button\" value=\"查看帮助\" class=\"popup_button\" id='help_button' data-help-url='" . DVWA_WEB_PAGE_TO_ROOT . "../vulnerabilities/view_help.php?id={$pId}&security={$security}' )\">";
 }
 
 
 function dvwaButtonSourceHtmlGet( $pId ) {
 	$security = dvwaSecurityLevelGet();
-	return "<input type=\"button\" value=\"查看源码\" class=\"popup_button\" id='source_button' data-source-url='" . DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/view_source.php?id={$pId}&security={$security}' )\">";
+	return "<input type=\"button\" value=\"查看源码\" class=\"popup_button\" id='source_button' data-source-url='" . DVWA_WEB_PAGE_TO_ROOT . "../vulnerabilities/view_source.php?id={$pId}&security={$security}' )\">";
 }
 
 
@@ -550,7 +603,7 @@ function tokenField() {  # Return a field for the (CSRF) token
 
 // Setup Functions --
 $PHPUploadPath    = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "hackable" . DIRECTORY_SEPARATOR . "uploads" ) . DIRECTORY_SEPARATOR;
-$PHPIDSPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "external" . DIRECTORY_SEPARATOR . "phpids" . DIRECTORY_SEPARATOR . dvwaPhpIdsVersionGet() . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "IDS" . DIRECTORY_SEPARATOR . "tmp" . DIRECTORY_SEPARATOR . "phpids_log.txt" );
+//$PHPIDSPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "external" . DIRECTORY_SEPARATOR . "phpids" . DIRECTORY_SEPARATOR . dvwaPhpIdsVersionGet() . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "IDS" . DIRECTORY_SEPARATOR . "tmp" . DIRECTORY_SEPARATOR . "phpids_log.txt" );
 $PHPCONFIGPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "config");
 
 
