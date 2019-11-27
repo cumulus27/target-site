@@ -266,8 +266,8 @@ function dvwaHtmlEcho( $pPage ) {
 	$menuBlocks[ 'meta' ] = array();
 	if( dvwaIsLoggedIn() ) {
 //		$menuBlocks[ 'meta' ][] = array( 'id' => 'database', 'name' => '数据库设置', 'url' => 'source/sql-connections/setup-db.php' );
-		$menuBlocks[ 'meta' ][] = array( 'id' => 'security', 'name' => '安全等级', 'url' => 'security.php' );
-		$menuBlocks[ 'meta' ][] = array( 'id' => 'phpinfo', 'name' => 'PHP信息', 'url' => 'phpinfo.php' );
+//		$menuBlocks[ 'meta' ][] = array( 'id' => 'security', 'name' => '安全等级', 'url' => 'security.php' );
+		$menuBlocks[ 'meta' ][] = array( 'id' => 'phpinfo', 'name' => 'PHP信息', 'url' => '../phpinfo.php' );
 	}
 //	$menuBlocks[ 'meta' ][] = array( 'id' => 'about', 'name' => 'About', 'url' => 'about.php' );
 

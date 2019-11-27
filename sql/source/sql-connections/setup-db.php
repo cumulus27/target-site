@@ -22,11 +22,11 @@ SETTING UP THE DATABASE SCHEMA AND POPULATING DATA IN TABLES:
 <?php
 //including the Mysql connect parameters.
 include("../sql-connections/db-creds.inc");
+require "../../../config/config.inc.php";
 
 
 
-
-$con = mysql_connect($host,$dbuser,$dbpass);
+$con = mysql_connect($_DVWA['db_server'],$_DVWA['db_user'],$_DVWA['db_password']);
 if (!$con)
   {
   die('[*]...................Could not connect to DB, check the creds in db-creds.inc: ' . mysql_error());

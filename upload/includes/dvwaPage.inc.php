@@ -273,12 +273,12 @@ function dvwaHtmlEcho( $pPage ) {
 	$systemInfoHtml = "";
 	if( dvwaIsLoggedIn() )
 		$systemInfoHtml = "<div align=\"left\">{$userInfoHtml}<br /></div>";
-	if( $pPage[ 'source_button' ] ) {
-		$systemInfoHtml = dvwaButtonSourceHtmlGet( $pPage[ 'source_button' ] ) . " $systemInfoHtml";
-	}
-	if( $pPage[ 'help_button' ] ) {
-		$systemInfoHtml = dvwaButtonHelpHtmlGet( $pPage[ 'help_button' ] ) . " $systemInfoHtml";
-	}
+//	if( $pPage[ 'source_button' ] ) {
+//		$systemInfoHtml = dvwaButtonSourceHtmlGet( $pPage[ 'source_button' ] ) . " $systemInfoHtml";
+//	}
+//	if( $pPage[ 'help_button' ] ) {
+//		$systemInfoHtml = dvwaButtonHelpHtmlGet( $pPage[ 'help_button' ] ) . " $systemInfoHtml";
+//	}
 
 	// Send Headers + main HTML code
 	Header( 'Cache-Control: no-cache, must-revalidate');   // HTTP/1.1
