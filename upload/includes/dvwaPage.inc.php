@@ -187,11 +187,11 @@ function dvwaHtmlEcho( $pPage ) {
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'home' ][] = array( 'id' => 'home', 'name' => '主页', 'url' => '.' );
 //		$menuBlocks[ 'home' ][] = array( 'id' => 'instructions', 'name' => 'Instructions', 'url' => 'instructions.php' );
-		$menuBlocks[ 'home' ][] = array( 'id' => 'setup', 'name' => '设置/重置数据库', 'url' => 'setup.php' );
+//		$menuBlocks[ 'home' ][] = array( 'id' => 'setup', 'name' => '设置/重置数据库', 'url' => '../setup.php' );
 	}
 	else {
-		$menuBlocks[ 'home' ][] = array( 'id' => 'setup', 'name' => '设置', 'url' => 'setup.php' );
-		$menuBlocks[ 'home' ][] = array( 'id' => 'instructions', 'name' => '说明', 'url' => 'instructions.php' );
+		$menuBlocks[ 'home' ][] = array( 'id' => 'setup', 'name' => '设置', 'url' => '../setup.php' );
+		$menuBlocks[ 'home' ][] = array( 'id' => 'instructions', 'name' => '说明', 'url' => '../instructions.php' );
 	}
 
 	if( dvwaIsLoggedIn() ) {
@@ -221,8 +221,8 @@ function dvwaHtmlEcho( $pPage ) {
 
 	$menuBlocks[ 'meta' ] = array();
 	if( dvwaIsLoggedIn() ) {
-		$menuBlocks[ 'meta' ][] = array( 'id' => 'security', 'name' => '安全等级', 'url' => 'security.php' );
-		$menuBlocks[ 'meta' ][] = array( 'id' => 'phpinfo', 'name' => 'PHP信息', 'url' => 'phpinfo.php' );
+//		$menuBlocks[ 'meta' ][] = array( 'id' => 'security', 'name' => '安全等级', 'url' => 'security.php' );
+		$menuBlocks[ 'meta' ][] = array( 'id' => 'phpinfo', 'name' => 'PHP信息', 'url' => '../phpinfo.php' );
 	}
 //	$menuBlocks[ 'meta' ][] = array( 'id' => 'about', 'name' => 'About', 'url' => 'about.php' );
 
@@ -272,13 +272,13 @@ function dvwaHtmlEcho( $pPage ) {
 
 	$systemInfoHtml = "";
 	if( dvwaIsLoggedIn() )
-		$systemInfoHtml = "<div align=\"left\">{$userInfoHtml}<br /><em> 安全等级：</em> {$securityLevelHtml}<br /></div>";
-	if( $pPage[ 'source_button' ] ) {
-		$systemInfoHtml = dvwaButtonSourceHtmlGet( $pPage[ 'source_button' ] ) . " $systemInfoHtml";
-	}
-	if( $pPage[ 'help_button' ] ) {
-		$systemInfoHtml = dvwaButtonHelpHtmlGet( $pPage[ 'help_button' ] ) . " $systemInfoHtml";
-	}
+		$systemInfoHtml = "<div align=\"left\">{$userInfoHtml}<br /></div>";
+//	if( $pPage[ 'source_button' ] ) {
+//		$systemInfoHtml = dvwaButtonSourceHtmlGet( $pPage[ 'source_button' ] ) . " $systemInfoHtml";
+//	}
+//	if( $pPage[ 'help_button' ] ) {
+//		$systemInfoHtml = dvwaButtonHelpHtmlGet( $pPage[ 'help_button' ] ) . " $systemInfoHtml";
+//	}
 
 	// Send Headers + main HTML code
 	Header( 'Cache-Control: no-cache, must-revalidate');   // HTTP/1.1
