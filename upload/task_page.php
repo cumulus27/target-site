@@ -3,6 +3,14 @@
     $param = $_SERVER["QUERY_STRING"];
     parse_str($param, $items);
     $task = $items["task"];
+
+//    $if_show_code = false;
+//    $acton = "";
+//    if(array_key_exists("action", $items)){
+//        $if_show_code = true;
+//        $acton = $items["action"];
+//    }
+
 //    echo $page;
 
 define( 'DVWA_WEB_PAGE_TO_ROOT', '' );
@@ -31,7 +39,8 @@ if( ( !extension_loaded( 'gd' ) || !function_exists( 'gd_info' ) ) ) {
 }
 
 ob_start();
-require("source/task-{$task}.php");
+require("source/pass-{$task}/task-{$task}.php");
+include_once('foot.html');
 $content = ob_get_contents();
 ob_end_clean();
 
@@ -40,6 +49,7 @@ $page[ 'body' ] .= $content;
 //$page[ 'body' ] .= file("source/task-{$task}.php");
 
 $page[ 'body' ] .= "
+<br />
 <div>
     {$html}
 	<h2>More Information</h2>
