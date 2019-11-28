@@ -229,7 +229,7 @@ function dvwaHtmlEcho( $pPage ) {
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'logout' ] = array();
 		$menuBlocks[ 'logout' ][] = array( 'id' => 'back', 'name' => '返回', 'url' => '../index.php' );
-		$menuBlocks[ 'logout' ][] = array( 'id' => 'logout', 'name' => '注销', 'url' => 'logout.php' );
+		$menuBlocks[ 'logout' ][] = array( 'id' => 'logout', 'name' => '注销', 'url' => '../logout.php' );
 	}
 
 	$menuHtml = '';
