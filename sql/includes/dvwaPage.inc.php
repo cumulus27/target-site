@@ -190,8 +190,8 @@ function dvwaHtmlEcho( $pPage ) {
 		$menuBlocks[ 'home' ][] = array( 'id' => 'setup', 'name' => '设置/重置数据库', 'url' => 'source/sql-connections/setup-db.php' );
 	}
 	else {
-		$menuBlocks[ 'home' ][] = array( 'id' => 'setup', 'name' => '设置', 'url' => 'setup.php' );
-		$menuBlocks[ 'home' ][] = array( 'id' => 'instructions', 'name' => '说明', 'url' => 'instructions.php' );
+		$menuBlocks[ 'home' ][] = array( 'id' => 'setup', 'name' => '设置', 'url' => '../setup.php' );
+		$menuBlocks[ 'home' ][] = array( 'id' => 'instructions', 'name' => '说明', 'url' => '../instructions.php' );
 	}
 
 	if( dvwaIsLoggedIn() ) {
@@ -274,7 +274,7 @@ function dvwaHtmlEcho( $pPage ) {
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'logout' ] = array();
 		$menuBlocks[ 'logout' ][] = array( 'id' => 'back', 'name' => '返回', 'url' => '../index.php' );
-		$menuBlocks[ 'logout' ][] = array( 'id' => 'logout', 'name' => '注销', 'url' => 'logout.php' );
+		$menuBlocks[ 'logout' ][] = array( 'id' => 'logout', 'name' => '注销', 'url' => '../logout.php' );
 	}
 
 	$menuHtml = '';
