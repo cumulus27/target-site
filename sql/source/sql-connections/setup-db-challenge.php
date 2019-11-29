@@ -10,9 +10,11 @@ require_once 'db-creds.inc';
 if(isset($_GET['id']))
 $id = $_GET['id'];
 //echo $id;
+include("../sql-connections/db-creds.inc");
+include "../../../config/config.inc.php";
 
 // Check connection
-@$con = mysql_connect($host,$dbuser,$dbpass);
+@$con = mysql_connect($_DVWA['db_server'],$_DVWA['db_user'],$_DVWA['db_password']);
 if (!$con)
 {
     echo "Failed to connect to MySQL: " . mysql_error();
