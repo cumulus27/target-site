@@ -221,9 +221,13 @@ function dvwaHtmlEcho( $pPage ) {
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql23', 'name' => 'SQL注入23', 'url' => 'source/Less-23/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql24', 'name' => 'SQL注入24', 'url' => 'source/Less-24/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql25', 'name' => 'SQL注入25', 'url' => 'source/Less-25/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql25a', 'name' => 'SQL注入25a', 'url' => 'source/Less-25a/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql26', 'name' => 'SQL注入26', 'url' => 'source/Less-26/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql26a', 'name' => 'SQL注入26a', 'url' => 'source/Less-26a/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql27', 'name' => 'SQL注入27', 'url' => 'source/Less-27/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql27a', 'name' => 'SQL注入27a', 'url' => 'source/Less-27a/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql28', 'name' => 'SQL注入28', 'url' => 'source/Less-28/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql28a', 'name' => 'SQL注入28a', 'url' => 'source/Less-28a/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql29', 'name' => 'SQL注入29', 'url' => 'source/Less-29/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql30', 'name' => 'SQL注入30', 'url' => 'source/Less-30/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sql31', 'name' => 'SQL注入31', 'url' => 'source/Less-31/' );

@@ -10,7 +10,7 @@ include("../sql-connections/db-creds.inc");
 </head>
 
 <body bgcolor="#000000">
-<div style=" margin-top:70px;color:#FFF; font-size:23px; text-align:center">Welcome&nbsp;&nbsp;&nbsp;<font color="#FF0000"> Dhakkan </font><br>
+<div style=" margin-top:70px;color:#FFF; font-size:23px; text-align:center">Welcome&nbsp;&nbsp;&nbsp;<font color="#FF0000"> Challenger </font><br>
 <font size="3" color="#FFFF00">
 
 
@@ -30,7 +30,8 @@ fclose($fp);
 
 // connectivity
 //mysql connections for stacked query examples.
-$con1 = mysqli_connect($host,$dbuser,$dbpass,$dbname);
+require "../../../config/config.inc.php";
+$con1 = mysqli_connect($_DVWA['db_server'],$_DVWA['db_user'],$_DVWA['db_password'],$dbname);
 // Check connection
 if (mysqli_connect_errno($con1))
 {
